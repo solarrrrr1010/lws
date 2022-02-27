@@ -142,7 +142,7 @@ class ConceptInfo(View):
 
             result = [i for i in concept_info if i[search[key]] != None]
             cache.set(search[key], result, 300)
-        print("캐시 있든 없든 이건 떠야 함")
+
         context = {"concept_info": cache.get(search[key])[offset : offset + limit]}
 
         return JsonResponse(context, status=200)
